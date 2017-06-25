@@ -3,9 +3,13 @@ extends layout
 block content
 	.inner
 		h2 Edit Your Account
-		form(action="/account" method="POST")
+		form(action="/account" method="POST" enctype="multipart/form-data")
 			label(for="name") Name
 			input(type="text" name="name" value=user.name)
 			label(for="email") Email
 			input(type="email" name="email" value=user.email)
+			label(for="profile") Profile Picture
+				input(type="file" name="profile" id="profile" accept="image/gif, image/png, image/jpeg")
+				if user.profile
+					img(src=`/profiles/${user.profile}`, alt=user.name width=300)
 			input.button(type="submit" value="Update My Account")

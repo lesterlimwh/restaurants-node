@@ -2,12 +2,14 @@ extends layout
 
 block content
 	.inner
-		form.form(action="/register" method="POST")
+		form.form(action="/register" method="POST" enctype="multipart/form-data")
 			h2 Register
 			label(for="name") Name
 			input(type="text" name="name" value=( body ? body.name : ''))
 			label(for="email") Email
 			input(type="text" name="email" value=( body ? body.email : ''))
+			label(for="profile") Profile Picture
+				input(type="file" name="profile" id="profile" accept="image/gif, image/png, image/jpeg")
 			label(for="password") Password
 			input(type="password" name="password" value=( body ? body.password : ''))
 			label(for="password-confirm") Confirm Password
