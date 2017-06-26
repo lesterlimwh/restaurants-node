@@ -1,8 +1,7 @@
 mixin review(review)
 	.review__header
 		.review__author
-			- const userProfile = user.profile ? `/profiles/${user.profile}` : '/profiles/default.png'
-			img.avatar(src=userProfile)
+			img.avatar(src=`/profiles/${review.author.profile}`)
 			p= review.author.name
 		.review__stars(title=`Rated ${review.rating} out of 5 stars`)
 			= `★`.repeat(review.rating)
