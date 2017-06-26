@@ -35,7 +35,7 @@ exports.resize = async (req, res, next) => {
 	}
 	const extension = req.file.mimetype.split('/')[1];
 	// set the file name to be the same otherwise use a new one
-	if (req.user.profile){
+	if (req.user && req.user.profile){
 		req.body.profile = req.user.profile;
 	} else{
 		req.body.profile = `${uuid.v4()}.${extension}`;	
