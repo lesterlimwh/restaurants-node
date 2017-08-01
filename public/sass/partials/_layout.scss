@@ -4,7 +4,7 @@ html {
 
 body {
   background: $purple;
-  background:#efefef;
+  background: #efefef;
   &:before {
     content: '';
     display: block;
@@ -20,4 +20,76 @@ body {
   @media all and (max-width: 900px) {
     padding: 2rem;
   }
+}
+
+.debugroom{
+  height: 1000px;
+}
+
+.debugbox{
+  width: 90%;
+  height: 500px;
+  margin: 5% auto;
+  overflow: hidden;
+  background: #00c9a3;
+  position: relative;
+}
+
+.rect1{
+  height: 650px;
+  width: 100px;
+  transform: rotate(-30deg);
+  background: #066351;
+  position: absolute;
+  top: -10%;
+  left: 100px;
+}
+
+.rect2{
+  height: 650px;
+  width: 100px;
+  transform: rotate(30deg);
+  background: #007d65;
+  position: absolute;
+  top: -15%;
+  left: 376px;
+}
+
+.rect3{
+  height: 650px;
+  width: 100px;
+  transform: rotate(-26.7deg);
+  background: #007d65;
+  position: absolute;
+  top: -15%;
+  left: 540px;
+  opacity: 0.65;
+  z-index: 1;
+}
+
+.banner{
+  position: absolute;
+  top: -5%;
+  left: 450px;
+}
+
+.debugtext{
+  z-index: 2;
+  position: absolute;
+  bottom: 70px;
+  left: 55px;
+}
+
+.debugtitle{
+  font-family: 'code bold';
+  font-size: 36px;
+  color: #fff;
+  letter-spacing: 5px;
+}
+
+.debugsubtitle{
+  font-family: 'open sans';
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 1px;
 }

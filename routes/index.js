@@ -8,6 +8,8 @@ const { catchErrors } = require('../handlers/errorHandlers');
 
 router.get('/', catchErrors(storeController.getStores));
 
+router.get('/debugroom', storeController.homePage);
+
 router.get('/stores', catchErrors(storeController.getStores));
 router.get('/stores/page/:page', catchErrors(storeController.getStores));
 
@@ -78,9 +80,7 @@ router.post('/reviews/:id',
 
 router.get('/top', catchErrors(storeController.getTopStores));
 
-/*
-	API
-*/
+// API
 
 router.get('/api/search', catchErrors(storeController.searchStores));
 router.get('/api/stores/near', catchErrors(storeController.mapStores));

@@ -48,7 +48,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// // The flash middleware let's us use req.flash('error', 'Shit!'), which will then pass that message to the next page the user requests
+// // The flash middleware let's us use req.flash('error', 'Bad'), which will then pass that message to the next page the user requests
 app.use(flash());
 
 // pass variables to our templates + all requests
@@ -75,7 +75,7 @@ app.use(errorHandlers.notFound);
 // One of our error handlers will see if these errors are just validation errors
 app.use(errorHandlers.flashValidationErrors);
 
-// Otherwise this was a really bad error we didn't expect! Shoot eh
+// Otherwise this was a really bad error we didn't expect
 if (app.get('env') === 'development') {
   /* Development Error Handler - Prints stack trace */
   app.use(errorHandlers.developmentErrors);

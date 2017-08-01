@@ -64,7 +64,8 @@ const config = {
     filename: '[name].bundle.js'
   },
 
-  // remember we said webpack sees everthing as modules and how different loaders are responsible for different file types? Here is is where we implement them. Pass it the rules for our JS and our styles
+  // webpack sees everthing as modules and how different loaders are responsible for different file types.
+  // Here is is where we implement them. Pass it the rules for our JS and our styles
   module: {
     rules: [javascript, styles]
   },
@@ -75,7 +76,7 @@ const config = {
     new ExtractTextPlugin('style.css'),
   ]
 };
-// webpack is cranky about some packages using a soon to be deprecated API. shhhhhhh
+// webpack is cranky about some packages using a soon to be deprecated API.
 process.noDeprecation = true;
 
 module.exports = config;
